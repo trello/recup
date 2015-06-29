@@ -1,6 +1,6 @@
 {
   "name": "recup",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React.createElement in the style of teacup.",
   "main": "lib/recup",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/trello/teacup-react.git"
+    "url": "git://github.com/trello/recup.git"
   },
   "author": "Aaron Dufour <aaron.dufour@gmail.com>"
 }
