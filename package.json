@@ -1,0 +1,29 @@
+{
+  "name": "recup",
+  "version": "0.0.0",
+  "description": "React.createElement in the style of teacup.",
+  "main": "lib/recup",
+  "scripts": {
+    "pretest": "npm run compile",
+    "prepublish": "npm run compile",
+    "test": "mocha",
+    "compile": "coffee --compile --output lib/ src/"
+  },
+  "keywords": [
+    "template",
+    "coffeescript",
+    "render",
+    "react"
+  ],
+  "devDependencies": {
+    "coffee-script": ">=1.8.0",
+    "mocha": "*",
+    "react": "*",
+    "should": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trello/teacup-react.git"
+  },
+  "author": "Aaron Dufour <aaron.dufour@gmail.com>"
+}
