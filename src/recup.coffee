@@ -103,6 +103,12 @@ class TeacupReact
   createElement: (args...) ->
     @elementsOut.push React.createElement(args...)
 
+  # I know, this is implemented identically to text.  We want to maintain
+  # mostly-compatibility with teacup, and calling text on a react element makes
+  # no sense, so here we are.
+  addElement: (el) ->
+    @elementsOut.push el
+
   # tagName, [selector,] [props,] [contents]
   tag: (tagName, args...) ->
     { attrs, contents } = @normalizeArgs args
