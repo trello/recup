@@ -57,6 +57,16 @@ class TeacupReact
 
     { id, classes }
 
+  _unNestData: (prefix, data) ->
+    obj = {}
+    if typeof data == 'object'
+      for k, v of data
+        for nK, nV of @_unNestData([prefix, k].join('-'), v)
+          obj[nK] = nV
+    else
+      obj[prefix] = data
+    obj
+
   normalizeArgs: (args) ->
     attrs = {}
     selector = null
@@ -84,6 +94,12 @@ class TeacupReact
         throw Error("Can't specify both class and className")
       attrs.className = attrs.class
       delete attrs.class
+
+    if attrs.data?
+      data = attrs.data
+      delete attrs.data
+      for k, v of @_unNestData('data', data)
+        attrs[k] = v
 
     if selector?
       { id, classes } = @parseSelector(selector)
