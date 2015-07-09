@@ -27,6 +27,9 @@ class TeacupReact
   render: (template, args...) ->
     @_unwrap @_render(template, null, args...)
 
+  cede: (args...) ->
+    @render(args...)
+
   renderable: (template) ->
     t = @
     (args...) ->
