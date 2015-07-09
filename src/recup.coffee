@@ -2,7 +2,7 @@ React = require('react')
 
 els = require('./elements')
 
-class TeacupReact
+class Recup
   constructor: ->
     @elementsOut = null
 
@@ -155,7 +155,7 @@ class TeacupReact
 
 for tagName in els.regular.concat(els.void, els.obsolete, els.obsolete_void)
   do (tagName) ->
-    TeacupReact::[tagName] = (args...) -> @tag tagName, args...
+    Recup::[tagName] = (args...) -> @tag tagName, args...
 
-module.exports = new TeacupReact().bound()
-module.exports.Recup = TeacupReact
+module.exports = new Recup().bound()
+module.exports.Recup = Recup
