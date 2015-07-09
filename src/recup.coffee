@@ -142,8 +142,20 @@ class TeacupReact
     # break everything, we implicitly throw the text in a span.
     @span dangerouslySetInnerHTML: __html: str
 
+  bound: ->
+    bound = {}
+
+    boundMethods = 'cede raw render renderable tag text addElement createElement normalizeArgs'.split(' ')
+
+    for method in boundMethods.concat(els.regular, els.void, els.obsolete, els.obsolete_void)
+      do (method) =>
+        bound[method] = (args...) => @[method].apply(@, args)
+
+    bound
+
 for tagName in els.regular.concat(els.void, els.obsolete, els.obsolete_void)
   do (tagName) ->
     TeacupReact::[tagName] = (args...) -> @tag tagName, args...
 
-module.exports = new TeacupReact()
+module.exports = new TeacupReact().bound()
+module.exports.Recup = TeacupReact
