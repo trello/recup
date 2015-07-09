@@ -1,6 +1,6 @@
 {
   "name": "recup",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "React.createElement in the style of teacup.",
   "main": "lib/recup",
   "scripts": {
