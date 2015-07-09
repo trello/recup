@@ -135,7 +135,7 @@ class TeacupReact
     @elementsOut.push React.createElement(tagName, attrs, children...)
 
   text: (str) ->
-    @elementsOut.push str
+    @elementsOut.push str.toString()
 
   raw: (str) ->
     # If we use dangerouslySetInnerHTML, we can't also pass children.  To not
