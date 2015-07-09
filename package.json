@@ -19,7 +19,7 @@
     "coffee-script": ">=1.8.0",
     "mocha": "*",
     "react": "*",
-    "should": "*"
+    "expect.js": "~0.3.1"
   },
   "repository": {
     "type": "git",
